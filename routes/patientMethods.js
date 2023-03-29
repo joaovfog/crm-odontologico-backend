@@ -10,12 +10,15 @@ async function connect() {
 async function getAllPatients(req, res) {
     const connection = await connect()
     const query = "SELECT * FROM pacientes"
-    
-    connection.query(query, (err, data) => {
-        if (err) return res.json(err)
 
-        return res.status(200).json(data)
+    connection.query(query, (err, data) => {
+        if (err)
+            return res.json(err);
+
+        return res.status(200).json(data);
     })
+
+    // console.log(rows)
     // const connection = await connect();
     // const rows = await connection.execute('SELECT * FROM pacientes');
     // console.log(rows)

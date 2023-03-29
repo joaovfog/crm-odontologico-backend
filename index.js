@@ -5,6 +5,8 @@ const cors = require('cors')
 const express = require("express")
 const app = express()
 
+const port = process.env.PORT || 3000
+
 app.use(cors())
 
 const patientMethods = require('./routes/patientMethods')
@@ -17,8 +19,6 @@ const dbPassword = process.env.DB_PASSWORD
 
 const databaseUrl = `mysql://${dbUser}:${dbPassword}/${dbHost}:${dbPort}/${dbName}`
 console.log(databaseUrl)
-
-const port = process.env.PORT || 3000
 
 app.get('/', function (req, res) {
     res.send("API rodando" + databaseUrl)

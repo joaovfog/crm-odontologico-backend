@@ -10,6 +10,7 @@ async function connect() {
 async function getAllPatients(req, res) {
     const connection = await connect();
     const rows = await connection.execute('SELECT * FROM pacientes');
+    console.log(rows)
     connection.end();
     res.json(rows);
 }

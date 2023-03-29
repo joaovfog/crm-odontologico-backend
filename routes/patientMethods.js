@@ -9,7 +9,7 @@ async function connect() {
 //listar pacientes
 async function getAllPatients(req, res) {
     // const connection = await connect();
-    const [rows] = await connection.execute('SELECT * FROM pacientes');
+    const rows = await connection.execute('SELECT * FROM pacientes');
     // connection.end();
     res.json(rows);
 }

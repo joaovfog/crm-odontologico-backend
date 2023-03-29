@@ -7,8 +7,6 @@ const app = express()
 
 app.use(cors())
 
-app.use(session({ secret: 'eB:4U:AHl~H6Zq]AI7=Z&-U=??$DU[l0`P/' }))
-
 const patientMethods = require('./routes/patientMethods')
 
 const dbName = process.env.DB_NAME
